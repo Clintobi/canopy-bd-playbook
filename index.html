@@ -36,7 +36,7 @@
   .header .meta strong { color: var(--text2); font-weight: 500; }
   section { margin-bottom: 48px; }
   section h2 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); margin-bottom: 16px; }
-  section p { font-size: 14px; color: var(--text2); line-height: 1.7; }
+  section p, section li { font-size: 14px; color: var(--text2); line-height: 1.7; }
   .matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border-radius: 8px; overflow: hidden; }
   .matrix-cell { background: var(--surface); padding: 20px; }
   .matrix-cell .axis { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 8px; }
@@ -95,57 +95,53 @@
 </div>
 
 <section>
-  <h2>I. The thesis</h2>
-  <p>Canopy is the only chain infrastructure where "sovereign" actually means what people think it means. A chain that can leave its security provider by governance. A chain that owns its fees, its token, its rules. The tweet put it better than any whitepaper: "Your chain on Canopy can do something no other chain can: Leave."</p>
-  <p style="margin-top:12px;">415K plus chains launched on testnet. 254K users. $8.5M from Arrington, Fenbushi, Borderless, SNZ. The Tanssi acquisition that shipped the production plumbing. And a thesis, laid out in that June 17 tweet, that the first truly autonomous agent will want a chain of its own. Canopy is the only project building for that day.</p>
-  <p style="margin-top:12px;">The demo gets the attention. The architecture keeps it. These four partnerships translate that architecture into distribution, validation, and ecosystem. Zero marketing spend required.</p>
+  <h2>I. Why these four</h2>
+  <p>I have been reading Canopy for weeks and the thing that keeps surprising me is how much of the real architecture gets buried under the launch demo. The recursive restaking mesh. Chains that can leave and re-parent by governance. Proof-of-Age VDFs nobody else is running. This is the security model the agentic economy actually needs, and most people covering the space do not see it.</p>
+  <p style="margin-top:12px;">415K plus chains on testnet. 254K users. $8.5M from Arrington, Fenbushi, Borderless, SNZ. The Tanssi acquisition quietly shipped the production plumbing. And the thesis from the June 17 tweet is correct: the first truly autonomous agent will want a chain of its own. Canopy is building for that day.</p>
+  <p style="margin-top:12px;">These four partnerships get the architecture in front of the people who need it. No ads, no content campaigns. Just the right conversations with the right teams.</p>
 </section>
 
 <section>
   <h2>II. Priority matrix</h2>
   <div class="matrix">
     <div class="matrix-cell">
-      <div class="axis">High Impact &middot; Right Now</div>
+      <div class="axis">High Impact &middot; This Week</div>
       <div class="partner">Caldera <span class="pill pill-now">this week</span></div>
-      <div class="rationale">75+ chains, $1B TVL. Every chain they launch needs security. Distribution lever with zero marginal cost.</div>
+      <div class="rationale">75+ chains. $1B TVL. Every chain they launch needs security. Literally the biggest distribution lever on the board.</div>
     </div>
     <div class="matrix-cell">
-      <div class="axis">High Impact &middot; Right Now</div>
+      <div class="axis">High Impact &middot; This Week</div>
       <div class="partner">ElizaOS <span class="pill pill-now">this week</span></div>
-      <div class="rationale">Biggest AI agent framework. The "agent that wants its own chain" from Canopy's thesis is the canonical Eliza use case.</div>
+      <div class="rationale">Biggest AI agent framework. The "agent that owns its own chain" thesis from your June 17 tweet is their next logical step.</div>
     </div>
     <div class="matrix-cell">
-      <div class="axis">Medium Impact &middot; Right Now</div>
+      <div class="axis">Medium Impact &middot; Soon</div>
       <div class="partner">Privy <span class="pill pill-now">next 2 weeks</span></div>
-      <div class="rationale">120M accounts. Default wallet on every Canopy chain means zero friction for builders. Agent wallets already shipped.</div>
+      <div class="rationale">120M accounts. Default wallets on every Canopy chain means zero friction for builders. Agent wallets just shipped.</div>
     </div>
     <div class="matrix-cell">
       <div class="axis">High Impact &middot; Pre-Mainnet</div>
       <div class="partner">EigenLayer <span class="pill pill-later">needs warm intro</span></div>
-      <div class="rationale">Complementary restaking models. AVS integration means Ethereum scale security for Canopy chains. Borderless backed both.</div>
+      <div class="rationale">Complementary restaking models. AVS integration gives Canopy chains Ethereum scale security. Borderless backed both.</div>
     </div>
   </div>
 </section>
 
 <section>
-  <h2>III. Partner deep dives</h2>
+  <h2>III. The conversations</h2>
 
   <div class="partner-card">
     <div class="number">01</div>
     <h3>Caldera</h3>
-    <div class="tagline">The distribution play. Put Canopy security in Caldera's deployment flow.</div>
+    <div class="tagline">Every chain Caldera launches fights the cold start security problem alone. Canopy fixes that. If their deployment flow had a "Secure with Canopy" option it would be the single biggest distribution lever available.</div>
     <div class="grid">
       <div class="grid-item">
-        <div class="label">Why Canopy</div>
-        <div class="value">Caldera's 75+ chains all fight the cold start security problem on their own. Canopy's recursive restaking solves it. If their deployment flow had a "Secure with Canopy" option, every new chain inherits validator security on day one with no capital raise. This is the single biggest distribution lever on the board.</div>
+        <div class="label">What Caldera gets</div>
+        <div class="value">They can sell something none of their competitors can: a chain that is already secured at genesis. Not Conduit, not AltLayer, not Gelato. It differentiates the product, makes chains stickier, and opens a revenue share conversation.</div>
       </div>
       <div class="grid-item">
-        <div class="label">Why Caldera</div>
-        <div class="value">They can sell something nobody else can: a chain that's already secured at genesis. Not Conduit, not AltLayer, not Gelato. Differentiates their product, increases chain stickiness, opens a revenue share conversation.</div>
-      </div>
-      <div class="grid-item full">
-        <div class="label">The angle</div>
-        <div class="value">Your customers are launching chains vulnerable at launch. Our chains aren't. Let's fix that together.</div>
+        <div class="label">What you get</div>
+        <div class="value">75+ existing chains and every new one they launch. Zero marginal cost. Every chain Caldera ships becomes a Canopy chain by default, inheriting your validator network instead of bootstrapping from zero.</div>
       </div>
     </div>
     <div class="contact-row">
@@ -153,68 +149,60 @@
       <div class="contact-value">James, BD at Caldera. Public Calendly: <a href="https://calendly.com/james_caldera/30min">calendly.com/james_caldera/30min</a>. Book directly or request intro via <a href="https://x.com/Calderaxyz">@Calderaxyz</a>.</div>
     </div>
     <div class="draft-msg">
-      <div class="prompt">Ready to send</div>
-James, I have been following Caldera's growth and the one thing every chain you launch still has to solve on its own is economic security at genesis. We have been thinking about that problem from the other direction: a recursive restaking mesh where new chains inherit security from an existing validator set, no capital raise required. 415K testnet chains later we are heading to mainnet.
+      <div class="prompt">Message you can send today</div>
+James, I have been following Caldera's growth and the one thing every chain you launch still has to solve on its own is economic security at genesis. We have been thinking about that problem from the other direction: a recursive restaking mesh where new chains inherit security from an existing validator set, no capital raise needed. 415K testnet chains later we are heading to mainnet.
 
-Would love 15 minutes to show you how a "Secure with Canopy" option in your deployment flow works for both sides.</div>
+Would love 15 minutes to show you what a "Secure with Canopy" option in your deployment flow looks like for both sides.</div>
   </div>
 
   <div class="partner-card">
     <div class="number">02</div>
     <h3>ElizaOS (ai16z)</h3>
-    <div class="tagline">The thesis validator. "The first truly autonomous agent will want a chain of its own."</div>
+    <div class="tagline">Canopy's June 17 tweet said it best: "The first truly autonomous agent will want a chain of its own." Eliza is the biggest AI agent framework. The next logical step after agents that tweet is agents that own their own chain.</div>
     <div class="grid">
       <div class="grid-item">
-        <div class="label">Why Canopy</div>
-        <div class="value">Canopy's own words from June 17: "The first truly autonomous agent will want a chain of its own. We're building for that day." An Eliza agent running a DeFi strategy, a prediction market, an autonomous service that needs its own sovereign chain with its own fee economy and validator set is the locked in use case. Nobody else lets an agent spin up a secured L1 in one session.</div>
+        <div class="label">What ElizaOS gets</div>
+        <div class="value">A narrative nobody else can match: sovereign agent chains as an Eliza primitive. Agents that tweet was 2025. Agents that own their own chain with their own fees, validators, and governance is next. Canopy is the only infra that makes it possible today.</div>
       </div>
       <div class="grid-item">
-        <div class="label">Why ElizaOS</div>
-        <div class="value">Agents that post on X was 2025. Agents that own their own chains is the next one. Canopy is the only infra that makes that possible today. Being first to offer sovereign agent chains as an Eliza primitive is a narrative no other AI framework can match and it costs them nothing to explore.</div>
-      </div>
-      <div class="grid-item full">
-        <div class="label">The angle</div>
-        <div class="value">What comes after the agent that tweets? The agent that owns its own chain. Let's build the first one together.</div>
+        <div class="label">What you get</div>
+        <div class="value">Thesis validation from the biggest name in AI agents. An Eliza agent launching on Canopy is the canonical demo of your entire architecture. It also costs them nothing to explore so the bar to a yes is low.</div>
       </div>
     </div>
     <div class="contact-row">
       <div class="contact-label">Contact</div>
-      <div class="contact-value">Shaw, Founder. X: <a href="https://x.com/shawmakesmagic">@shawmakesmagic</a> (162K). Email: founders@ai16zdao.com. 1,352 contributors, community governed.</div>
+      <div class="contact-value">Shaw, Founder. X: <a href="https://x.com/shawmakesmagic">@shawmakesmagic</a> (162K). Email: founders@ai16zdao.com. Community governed with 1,352 contributors.</div>
     </div>
     <div class="draft-msg">
-      <div class="prompt">Ready to send</div>
-Shaw, been watching Eliza's growth and I keep coming back to the same question: what comes after agents that post on X? The next step is agents that need sovereign execution environments. Their own fee economy, their own validator set, their own governance.
+      <div class="prompt">Message you can send today</div>
+Shaw, been watching Eliza's growth and I keep wondering what comes after agents that post on X. Feels like the answer is agents that need sovereign execution environments. Their own fee economy, their own validator set, their own governance.
 
-Canopy lets an agent launch a fully secured chain in one session. Recursive restaking plus Proof-of-Age VDFs so the chain has security from day one. 415K chains on testnet, AI native from the ground up.
+Canopy lets an agent launch a fully secured chain in one session, recursive restaking plus Proof-of-Age VDFs so the chain has security from day one. 415K chains on testnet, AI native from the ground up.
 
-Worth a quick chat on whether sovereign agent chains make sense as an Eliza primitive?</div>
+Does sovereign agent chains as an Eliza primitive feel like the right direction, or too early?</div>
   </div>
 
   <div class="partner-card">
     <div class="number">03</div>
     <h3>Privy</h3>
-    <div class="tagline">The developer UX play. Default embedded wallets on every Canopy chain.</div>
+    <div class="tagline">Every chain that launches on Canopy needs wallet infrastructure from day one. Privy has 120M plus accounts and just shipped agent wallets. A default integration means every builder who launches on Canopy becomes a Privy user.</div>
     <div class="grid">
       <div class="grid-item">
-        <div class="label">Why Canopy</div>
-        <div class="value">Every developer who launches on Canopy needs wallet infrastructure from day one. A native Privy integration means every new Canopy chain ships with embedded wallets pre configured. Zero setup, zero friction. This removes the biggest non consensus blocker to adoption.</div>
+        <div class="label">What Privy gets</div>
+        <div class="value">415K testnet chains heading to mainnet is a massive addressable customer base. The "agent with its own chain plus Privy agent wallet" combo is a clean narrative for both sides. Low lift integration, high volume upside.</div>
       </div>
       <div class="grid-item">
-        <div class="label">Why Privy</div>
-        <div class="value">120M plus accounts across 180 countries, and they just shipped agent wallets. 415K testnet chains heading to mainnet is a massive addressable customer base. The "agent with its own chain plus Privy agent wallet" combo is a clean, defensible narrative for both sides.</div>
-      </div>
-      <div class="grid-item full">
-        <div class="label">The angle</div>
-        <div class="value">Every Canopy chain needs wallets. You have 120M accounts and agent wallets. Let's make Privy the default. Every builder who launches on Canopy becomes your customer.</div>
+        <div class="label">What you get</div>
+        <div class="value">Removes the biggest non consensus blocker to adoption: wallet setup. Every developer who launches a Canopy chain gets embedded wallets pre configured with zero setup. This is a developer experience unlock that makes the 20 minute launch demo actually production ready.</div>
       </div>
     </div>
     <div class="contact-row">
       <div class="contact-label">Contact</div>
-      <div class="contact-value">Partnerships team via <a href="https://privy.io/contact">privy.io/contact</a>. Flag as BD / partnerships. Co-founder Henri Stern handles inbound BD directly.</div>
+      <div class="contact-value">Partnerships team via <a href="https://privy.io/contact">privy.io/contact</a>. Flag as BD / partnerships. Co-founder Henri Stern handles inbound directly.</div>
     </div>
     <div class="draft-msg">
-      <div class="prompt">Ready to send</div>
-Team, Canopy lets developers and AI agents launch sovereign chains in one session. 415K testnet launches and heading to mainnet. Every one of those chains needs wallet infrastructure from day one and Privy's embedded wallets plus the new agent wallet product are a natural fit.
+      <div class="prompt">Message you can send today</div>
+Team, Canopy lets developers and AI agents launch sovereign chains in one session. 415K testnet launches heading to mainnet. Every one of those chains needs wallet infrastructure from day one and Privy's embedded wallets plus the new agent wallet product are a natural fit.
 
 Would love to explore a native integration where every Canopy chain ships with Privy pre configured.</div>
   </div>
@@ -222,39 +210,35 @@ Would love to explore a native integration where every Canopy chain ships with P
   <div class="partner-card">
     <div class="number">04</div>
     <h3>EigenLayer</h3>
-    <div class="tagline">The shared security play. Complementary restaking models, complementary reach.</div>
+    <div class="tagline">Canopy's recursive restaking and EigenLayer's AVS model are complementary. One has the security supply, the other has the security demand. Borderless Capital backed both. The warm intro is right there.</div>
     <div class="grid">
       <div class="grid-item">
-        <div class="label">Why Canopy</div>
-        <div class="value">Canopy's recursive restaking mesh and EigenLayer's AVS model are complementary, not competitive. An integration could let Canopy chains tap Ethereum's security pool via EigenLayer, or let AVS operators validate Canopy chains. The combined security surface dwarfs either one alone.</div>
+        <div class="label">What EigenLayer gets</div>
+        <div class="value">415K chains worth of security demand. Canopy chains as AVS consumers or AVS operators as Canopy validators creates the deepest security pool in crypto. This is volume at a scale EigenLayer does not currently have.</div>
       </div>
       <div class="grid-item">
-        <div class="label">Why EigenLayer</div>
-        <div class="value">Canopy brings 415K chains worth of security demand. EigenLayer brings Ethereum's $15B plus restaked security supply. A bridge between the two, Canopy chains as AVS consumers or AVS operators as Canopy validators, creates the deepest security pool in crypto.</div>
-      </div>
-      <div class="grid-item full">
-        <div class="label">The angle</div>
-        <div class="value">You have the security supply. We have the security demand. Borderless backed both of us. Let's find the integration.</div>
+        <div class="label">What you get</div>
+        <div class="value">Ethereum's $15B plus restaked security pool available to Canopy chains. This is the endgame for your security model: recursive restaking that reaches all the way up to Ethereum's economic weight. Makes the architecture impossible to ignore.</div>
       </div>
     </div>
     <div class="warm-path">
-      <strong>Warm intro is the move.</strong> Borderless Capital invested in both Canopy and EigenLayer. Have your Borderless contact make the intro to Sreeram Kannan (<a href="https://x.com/sreeramkannan">@sreeramkannan</a>). Cold outreach to EigenLayer is low yield, they are inundated. Start the intro request now, these take weeks.
+      <strong>Warm intro is the move here.</strong> Borderless Capital invested in both Canopy and EigenLayer. Have your Borderless contact introduce you to Sreeram Kannan (<a href="https://x.com/sreeramkannan">@sreeramkannan</a>). Cold outreach to EigenLayer goes nowhere, they get flooded. Start the intro request now, these take weeks to materialize.
     </div>
     <div class="draft-msg">
-      <div class="prompt">Ready to send (after warm intro)</div>
-Sreeram, we built a recursive restaking mesh where new chains inherit security from an existing validator set instead of raising their own capital. 415K testnet chains, heading to mainnet. I think there is a natural complement between our model and EigenLayer's AVS framework. You have the security supply, we have the demand. Borderless backed both of us.
+      <div class="prompt">Message you can send (after warm intro is set)</div>
+Sreeram, we built a recursive restaking mesh where new chains inherit security from an existing validator set instead of raising their own capital. 415K testnet chains, heading to mainnet. I think there is a natural complement between our model and EigenLayer's AVS framework. You have the security supply, we have the demand.
 
 Would you be open to a conversation about whether there is an integration worth building?</div>
   </div>
 </section>
 
 <section>
-  <h2>IV. Execution timeline</h2>
+  <h2>IV. When to run each one</h2>
   <div class="timeline">
     <div class="timeline-item">
       <div class="phase">This week</div>
-      <div class="action">Book Caldera call</div>
-      <div class="note">James' Calendly is public. Fifteen minute intro, no deck needed. Just walk them through the restaking model and the integration.</div>
+      <div class="action">Book the Caldera call</div>
+      <div class="note">James' Calendly is public. 15 minute intro, no deck needed. Just walk them through the restaking model and how the integration works.</div>
     </div>
     <div class="timeline-item">
       <div class="phase">This week</div>
@@ -264,19 +248,19 @@ Would you be open to a conversation about whether there is an integration worth 
     <div class="timeline-item">
       <div class="phase">Next 2 weeks</div>
       <div class="action">Reach out to Privy</div>
-      <div class="note">Use the contact form. Lower urgency but high ROI for developer experience. Frame it as a distribution play for them.</div>
+      <div class="note">Use the contact form. Lower urgency but high ROI for dev experience. Frame as a distribution play for them.</div>
     </div>
     <div class="timeline-item">
       <div class="phase">Pre-mainnet</div>
-      <div class="action">Get Borderless warm intro to EigenLayer</div>
-      <div class="note">Highest impact conversation on the board but requires the warm path. Start the intro request now, it will take weeks to materialize.</div>
+      <div class="action">Get the Borderless intro to EigenLayer</div>
+      <div class="note">Highest impact conversation here but needs the warm path. Start the intro request now, it takes weeks.</div>
     </div>
   </div>
 </section>
 
 <div class="closing">
-  <p>I went deep on Canopy because the security architecture is the most interesting thing in chain infra right now and almost nobody is telling the real story. The demo gets attention. The restaking mesh deserves to win.</p>
-  <p style="margin-top:12px;">These four conversations are what I found from the outside. If any of them are useful I am happy to go deeper. If not, no reply needed.</p>
+  <p>I went deep on Canopy because the security architecture is genuinely the most interesting thing in chain infra right now. The demo gets the headlines but the restaking mesh is what deserves to win.</p>
+  <p style="margin-top:12px;">These four are what I would chase if I were on your BD team today. If anything here is useful I am happy to go deeper on any of them or send over the outreach framework I use and what I am seeing work right now.</p>
   <div class="sig">Clinton</div>
 </div>
 
