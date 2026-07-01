@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canopy Network — Partnership Playbook v1</title>
+<style>
+  :root {
+    --bg: #080808;
+    --surface: #111;
+    --surface2: #161616;
+    --border: #1e1e1e;
+    --text: #e4e4e4;
+    --text2: #888;
+    --text3: #5a5a5a;
+    --accent: #f5c518;
+    --blue: #3b82f6;
+    --green: #22c55e;
+    --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+  .header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+  }
+  .header .label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    font-size: 15px;
+    color: var(--text2);
+    margin-bottom: 24px;
+  }
+  .header .meta {
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    color: var(--text3);
+  }
+  .header .meta span { display: block; }
+  .header .meta strong { color: var(--text2); font-weight: 500; }
+
+  section { margin-bottom: 48px; }
+  section h2 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  section p {
+    font-size: 14px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+
+  .matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .matrix-cell {
+    background: var(--surface);
+    padding: 20px;
+  }
+  .matrix-cell .axis {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text3);
+    margin-bottom: 8px;
+  }
+  .matrix-cell .partner {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .matrix-cell .rationale {
+    font-size: 11px;
+    color: var(--text2);
+    line-height: 1.5;
+  }
+  .pill {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+  }
+  .pill-now { background: rgba(34,197,94,0.12); color: var(--green); }
+  .pill-later { background: rgba(239,68,68,0.12); color: var(--red); }
+
+  .partner-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+  .partner-card .number {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .partner-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .partner-card .tagline {
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  .partner-card .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .partner-card .grid-item {
+    background: var(--surface2);
+    border-radius: 6px;
+    padding: 14px;
+  }
+  .partner-card .grid-item .label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    margin-bottom: 6px;
+  }
+  .partner-card .grid-item .value {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .partner-card .grid-item.full {
+    grid-column: 1 / -1;
+  }
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface2);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+  }
+  .contact-row .contact-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text3);
+    min-width: 50px;
+  }
+  .contact-row .contact-value {
+    font-size: 12px;
+    color: var(--text);
+  }
+  .contact-row .contact-value a {
+    color: var(--blue);
+    text-decoration: none;
+  }
+  .contact-row .contact-value a:hover { text-decoration: underline; }
+  .warm-path {
+    font-size: 11px;
+    color: var(--text2);
+    padding: 10px 14px;
+    background: rgba(245,197,24,0.06);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+  }
+  .draft-msg {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text2);
+    white-space: pre-wrap;
+    font-family: inherit;
+  }
+  .draft-msg .prompt {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .timeline { position: relative; padding-left: 20px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    bottom: 4px;
+    width: 1px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 24px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -17px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .timeline-item .phase {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .timeline-item .action {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .timeline-item .note {
+    font-size: 11px;
+    color: var(--text3);
+  }
+
+  .closing {
+    border-top: 1px solid var(--border);
+    padding-top: 32px;
+    margin-top: 48px;
+  }
+  .closing p {
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+  }
+  .closing .sig {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 40px 16px 60px; }
+    .header h1 { font-size: 22px; }
+    .matrix { grid-template-columns: 1fr; }
+    .partner-card .grid { grid-template-columns: 1fr; }
+    .header .meta { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <div class="label">Partnership Playbook</div>
+  <h1>Canopy Network</h1>
+  <div class="subtitle">Four conversations to multiply reach before mainnet</div>
+  <div class="meta">
+    <span><strong>Prepared for</strong> Adam Liposky, Co-founder &amp; CEO</span>
+    <span><strong>Date</strong> July 2026</span>
+    <span><strong>Classification</strong> Internal — do not forward</span>
+  </div>
+</div>
+
+<section>
+  <h2>I. The thesis</h2>
+  <p>Canopy's recursive restaking mesh — Nested Chains inheriting security from a Root via restaked Committees, re-parenting by governance with no re-genesis — is the most under-leveraged asset in chain infrastructure right now. 331,000 testnet chains, $8.5M from Arrington/Fenbushi/Borderless/SNZ, and a Tanssi acquisition that quietly shipped the production plumbing.</p>
+  <p style="margin-top:12px;">The demo ("launch a chain in 20 minutes") gets the attention. The architecture ("who secures the chain the AI wrote?") keeps it. These four partnerships translate that architecture into distribution, validation, and ecosystem — without a single piece of marketing spend.</p>
+</section>
+
+<section>
+  <h2>II. Priority matrix</h2>
+  <div class="matrix">
+    <div class="matrix-cell">
+      <div class="axis">High Impact · Right Now</div>
+      <div class="partner">Caldera <span class="pill pill-now">this week</span></div>
+      <div class="rationale">75+ chains, $1B TVL. Every chain they launch needs security. Distribution lever with zero marginal cost.</div>
+    </div>
+    <div class="matrix-cell">
+      <div class="axis">High Impact · Right Now</div>
+      <div class="partner">ElizaOS <span class="pill pill-now">this week</span></div>
+      <div class="rationale">Biggest AI agent framework. Canonical "AI builds app &rarr; Canopy secures chain" thesis validation. Narrative gold.</div>
+    </div>
+    <div class="matrix-cell">
+      <div class="axis">Medium Impact · Right Now</div>
+      <div class="partner">Privy <span class="pill pill-now">next 2 weeks</span></div>
+      <div class="rationale">120M accounts. Default wallet on every Canopy chain = developer experience unlock. Agent wallets shipped.</div>
+    </div>
+    <div class="matrix-cell">
+      <div class="axis">High Impact · Pre-Mainnet</div>
+      <div class="partner">EigenLayer <span class="pill pill-later">needs warm intro</span></div>
+      <div class="rationale">Complementary restaking models. AVS integration = Ethereum-scale security. Borderless mutual backer.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>III. Partner deep-dives</h2>
+
+  <div class="partner-card">
+    <div class="number">01</div>
+    <h3>Caldera</h3>
+    <div class="tagline">The distribution play — put Canopy security in Caldera's deployment flow</div>
+    <div class="grid">
+      <div class="grid-item">
+        <div class="label">Why Canopy</div>
+        <div class="value">Caldera's 75+ chains all face the L1 cold-start problem. Canopy's recursive restaking solves it. If Caldera adds a "Secure with Canopy" option, every new chain inherits validator security on day one — no capital raise required. This is the single biggest distribution lever available.</div>
+      </div>
+      <div class="grid-item">
+        <div class="label">Why Caldera</div>
+        <div class="value">They can sell "launch a chain that's secured from genesis" — a feature none of Conduit, AltLayer, or Gelato RaaS can offer. Differentiates their product, increases chain stickiness, and opens a revenue-share conversation.</div>
+      </div>
+      <div class="grid-item full">
+        <div class="label">The Angle</div>
+        <div class="value">"Your customers are launching chains vulnerable at launch. Ours aren't. Let us be the security layer in your deployment flow."</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-label">Contact</div>
+      <div class="contact-value">James — BD at Caldera. Public Calendly: <a href="https://calendly.com/james_caldera/30min">calendly.com/james_caldera/30min</a>. Book directly or request intro via <a href="https://x.com/Calderaxyz">@Calderaxyz</a>.</div>
+    </div>
+    <div class="draft-msg">
+      <div class="prompt">Outreach — ready to send</div>
+James — I've been following Caldera's growth and the one thing every chain you launch still has to solve on its own is economic security at genesis. We've been thinking about that problem from the other direction: a recursive restaking mesh where new chains inherit security from an existing validator set, no capital raise required. 331K testnet chains later, we're heading to mainnet.
+
+Would love 15 minutes to show you how a "Secure with Canopy" option in your deployment flow works for both sides.</div>
+  </div>
+
+  <div class="partner-card">
+    <div class="number">02</div>
+    <h3>ElizaOS (ai16z)</h3>
+    <div class="tagline">The thesis validator — an agent that owns its own chain is the canonical Canopy use case</div>
+    <div class="grid">
+      <div class="grid-item">
+        <div class="label">Why Canopy</div>
+        <div class="value">"AI builds the app, Canopy secures the chain." An Eliza agent running a DeFi strategy or autonomous service that needs its own sovereign chain — own fee economy, own validator set, own governance — is the locked-in use case. Nobody else lets an agent spin up a fully secured L1 in one session.</div>
+      </div>
+      <div class="grid-item">
+        <div class="label">Why ElizaOS</div>
+        <div class="value">"Agents that post on X" was 2025. 2026 is agents that own their own chains. Canopy is the only infra that makes that possible today. Being first to offer sovereign agent chains as an Eliza primitive is a narrative no other AI framework can match.</div>
+      </div>
+      <div class="grid-item full">
+        <div class="label">The Angle</div>
+        <div class="value">"What comes after the agent that tweets? The agent that owns its own chain. Let's build the first one."</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-label">Contact</div>
+      <div class="contact-value">Shaw — Founder. X: <a href="https://x.com/shawmakesmagic">@shawmakesmagic</a> (162K). Email: founders@ai16zdao.com. 1,352 contributors, community-governed.</div>
+    </div>
+    <div class="draft-msg">
+      <div class="prompt">Outreach — ready to send</div>
+Shaw — been watching Eliza's growth and thinking about what comes after agents that post on X. The next step is agents that need sovereign execution environments: their own fee economy, validator set, governance.
+
+Canopy lets an agent launch a fully secured chain in one session — recursive restaking + Proof-of-Age VDFs so the chain has security from day one. 331K chains on testnet, AI-native from the ground up.
+
+Worth a quick chat on whether sovereign agent chains make sense as an Eliza primitive?</div>
+  </div>
+
+  <div class="partner-card">
+    <div class="number">03</div>
+    <h3>Privy</h3>
+    <div class="tagline">The developer UX play — default embedded wallets on every Canopy chain</div>
+    <div class="grid">
+      <div class="grid-item">
+        <div class="label">Why Canopy</div>
+        <div class="value">Every developer who launches on Canopy needs wallet infrastructure from day one. A native Privy integration means every new Canopy chain ships with embedded wallets pre-configured — zero setup, zero friction. This removes the biggest non-consensus blocker to adoption.</div>
+      </div>
+      <div class="grid-item">
+        <div class="label">Why Privy</div>
+        <div class="value">120M+ accounts across 180 countries, and they just shipped agent wallets. 331K testnet chains heading to mainnet is a massive addressable customer base. The "agent with its own chain + Privy agent wallet" combo is a clean, defensible narrative for both sides.</div>
+      </div>
+      <div class="grid-item full">
+        <div class="label">The Angle</div>
+        <div class="value">"Every chain on Canopy needs wallets. You have 120M accounts and agent wallets. Let's make Privy the default — every developer who launches a chain on Canopy becomes your customer."</div>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div class="contact-label">Contact</div>
+      <div class="contact-value">Partnerships team via <a href="https://privy.io/contact">privy.io/contact</a> — flag as BD/partnerships. Co-founder Henri Stern handles inbound BD directly.</div>
+    </div>
+    <div class="draft-msg">
+      <div class="prompt">Outreach — ready to send</div>
+Team — Canopy lets developers and AI agents launch sovereign chains in one session. 331K testnet launches and heading to mainnet. Every one of those chains needs wallet infrastructure from day one, and Privy's embedded wallets + the new agent-wallet product are a natural fit.
+
+Would love to explore a native integration where every Canopy chain ships with Privy pre-configured.</div>
+  </div>
+
+  <div class="partner-card">
+    <div class="number">04</div>
+    <h3>EigenLayer</h3>
+    <div class="tagline">The shared security play — complementary restaking models, complementary reach</div>
+    <div class="grid">
+      <div class="grid-item">
+        <div class="label">Why Canopy</div>
+        <div class="value">Canopy's recursive restaking mesh and EigenLayer's AVS model are complementary, not competitive. An integration could let Canopy chains tap Ethereum's security pool via EigenLayer, or let AVS operators validate Canopy chains. The combined security surface dwarfs either alone.</div>
+      </div>
+      <div class="grid-item">
+        <div class="label">Why EigenLayer</div>
+        <div class="value">Canopy brings 331K chains worth of security demand. EigenLayer brings Ethereum's $15B+ restaked security supply. A bridge between the two — Canopy chains as AVS consumers, or AVS operators as Canopy validators — creates the deepest security pool in crypto.</div>
+      </div>
+      <div class="grid-item full">
+        <div class="label">The Angle</div>
+        <div class="value">"You have the security supply. We have the security demand. Borderless backed both of us. Let's find the integration."</div>
+      </div>
+    </div>
+    <div class="warm-path">
+      <strong>Warm intro is the move.</strong> Borderless Capital invested in both Canopy and EigenLayer. Have your Borderless contact make the intro to Sreeram Kannan (<a href="https://x.com/sreeramkannan">@sreeramkannan</a>). Cold outreach to EigenLayer is low-yield — they're inundated.
+    </div>
+    <div class="draft-msg">
+      <div class="prompt">Outreach — send after warm intro is established</div>
+Sreeram — we built a recursive restaking mesh where new chains inherit security from an existing validator set instead of raising their own capital. 331K testnet chains, heading to mainnet. I think there's a natural complement between our model and EigenLayer's AVS framework — you have the security supply, we have the demand. Borderless backed both of us.
+
+Would you be open to a conversation about whether there's an integration worth building?</div>
+  </div>
+</section>
+
+<section>
+  <h2>IV. Execution timeline</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="phase">This week</div>
+      <div class="action">Book Caldera call</div>
+      <div class="note">James' Calendly is public. 15-minute intro, no deck needed — just show the restaking model.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="phase">This week</div>
+      <div class="action">DM Shaw / email ElizaOS</div>
+      <div class="note">Shaw is responsive to direct, substantive DMs. Lead with the sovereign agent chain idea.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="phase">Next 2 weeks</div>
+      <div class="action">Reach out to Privy</div>
+      <div class="note">Use the contact form. Lower urgency but high ROI. Frame as a distribution play for them.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="phase">Pre-mainnet</div>
+      <div class="action">Get Borderless warm intro to EigenLayer</div>
+      <div class="note">Highest-impact conversation on the board, but requires the warm path. Start the intro request now — it'll take weeks.</div>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <p>I went deep on Canopy's architecture because it's the most interesting security model in chain infra right now and almost nobody is telling the real story. The demo gets attention. The restaking mesh deserves to win.</p>
+  <p style="margin-top:12px;">These four conversations are the highest-leverage moves I could find from the outside. If any of them are useful, I'm happy to go deeper. If not, no reply needed.</p>
+  <div class="sig">&mdash; Clinton</div>
+</div>
+
+</div>
+</body>
+</html>
